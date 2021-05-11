@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/styling.css">
+  <link rel="stylesheet" type="text/css" href="css/responsive.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="js/updateBalance.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<h1 class="text-center mt-5 display-1">welcome</h1>
+<h2 class="text-center">Enter your 16 digit account number or insert your card below</h2>
+<p class="text-center"> *** The Account Number is 1234567887654321 *** </p>
+<p class="text-center">
+  <input  id="tbInput" class="PINtext" type="number" placeholder="Enter Account Number" maxlength="16" readonly/>
+</p>
+
+<div id="VirtualKey" class="text-center">
+    <input class="calcBtn" id="btn1" type="button" onclick="input(this);" value="1" />
+    <input class="calcBtn" id="btn2" type="button" onclick="input(this);" value="2" />
+    <input class="calcBtn" id="btn3" type="button" onclick="input(this);" value="3"/>
+    <br />
+    <input class="calcBtn" id="btn4" type="button" onclick="input(this);" value="4"/>
+    <input class="calcBtn" id="btn5" type="button" onclick="input(this);" value="5"/>
+    <input class="calcBtn" id="btn6" type="button" onclick="input(this);" value="6"/>
+    <br />
+    <input class="calcBtn" id="btn7" type="button" onclick="input(this);" value="7"/>
+    <input class="calcBtn" id="btn8" type="button" onclick="input(this);" value="8"/>
+    <input class="calcBtn" id="btn9" type="button" onclick="input(this);" value="9"/>
+    <br />
+    <input class="calcBtn" id="btnEnt" type="button" onclick="ent()" style="color:green" value="Y"/>
+    <input class="calcBtn" id="btn0" type="button" onclick="input(this)" value="0"/>
+    <input class="calcBtn" id="btnDel" type="button" style="color:red" value="C" onclick="del();" />
+</div>
+
+
+<script>
+  var users = {
+    'accountNumber': 1234567887654321,
+    'accountPin': 6969,
+    'chequingBalance': 2000,
+    'savingsBalance': 5000,
+    'chequingTransactions': [[Date(),0,0,2000]],
+    'savingsTransactions': [[Date(),0,0,5000]]
+  };
+  console.log(users)
+  updateSessionStorage(users);
+
+function insertCard(){
+  window.location="PINInput.html"
+}
+
+function input(e) {
+    var tbInput = document.getElementById("tbInput");
+    if (tbInput.value.length < 16) {
+    tbInput.value=tbInput.value + e.value;
+	}
+}
+
+function del() {
+	var tbInput = document.getElementById("tbInput");
+	tbInput.value = tbInput.value.substr(0, tbInput.value.length-1);
+}
+
+function ent() {
+	var PIN="1234567887654321";
+	var str1=document.getElementById("tbInput").value;
+	if (str1==PIN) {
+		window.location="PINInput.html";
+ 	} else {
+ 		alert("That account number does not exist!");
+ 		document.getElementById("tbInput").value ="";
+ 	}
+}
+</script>
+</body>
+</html>
