@@ -4,13 +4,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/styling.css">
         <link rel="stylesheet" type="text/css" href="css/responsive.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="js/updateBalance.js"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+            crossorigin="anonymous">
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+            crossorigin="anonymous"></script>
     </head>
 
-<style>
+    <style>
 
 #result{
   font-size: 60px;
@@ -51,22 +59,24 @@
     background-color: red;
 }
 </style>
+    <body>
+        <div class="container">
 
-<body>
-<div class="container">
-
-<h1 align="center"><font size="7"><big><big><big><big>Withdraw</big></big></big></big></font></h1>
-
-<p id="result" align="center"></p>
+            <h1 class="text-center"><font size="7"><big><big><big><big>Withdraw</big></big></big></big></font></h1>
+            <p id="result" class="text-center"></p>
 
 
-<div class="row">
-    <div class="col-sm-6"><a onclick="removeMoney()" style="float: right" class="btn btn-primary btn-lg btn-success confirmationBtn enterButton">YES</a></div>
-    <div class="col-sm-6"><a onclick="goBack()" style="" class="btn btn-primary btn-lg btn-danger confirmationBtn backButton">NO</a></div>
-  </div>
+            <div class="row">
+                <div class="col-sm-6"><a onclick="removeMoney()" style="float:
+                        right" class="btn btn-primary btn-lg btn-success
+                        confirmationBtn enterButton">YES</a></div>
+                <div class="col-sm-6"><a onclick="goBack()" style="" class="btn
+                        btn-primary btn-lg btn-danger confirmationBtn
+                        backButton">NO</a></div>
+            </div>
 
 
-<SCRIPT LANGUAGE="javascript">
+            <SCRIPT LANGUAGE="javascript">
 
 var text = String(window.location);
 document.getElementById("result").innerHTML=("$"+text.split("=").pop()+"?");
@@ -89,7 +99,7 @@ function getQueryStrings() {
 var qs = getQueryStrings();
 var type = qs["account"];
 var amount = qs["val"];
-$("#title").append('<h3 style="text-align: center"> Enter the amount to withdraw from ' + type+ " 1234567887654321:" + '</h3>');
+$("#title").append('<h3 class="text-center"> Enter the amount to withdraw from ' + type+ " 1234567887654321:" + '</h3>');
 
 function submitForm(value) {
     location.href = 'confirmWithdrawal.html?account='+ type +'&val=' + value ;
@@ -104,6 +114,6 @@ function removeMoney() {
 }
 
 </SCRIPT>
-</div>
-</body>
+        </div>
+    </body>
 </html>
