@@ -1,61 +1,60 @@
 <!DOCTYPE html>
 
 <html>
-
-<style>
-
-.okBtn {
-
-	font-size: 40px;
-
-	width: 70px;
-
-}
-
-</style>
-
-
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="css/styling.css">
-  <link rel="stylesheet" type="text/css" href="css/responsive.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="js/updateBalance.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
-</head>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styling.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/updateBalance.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous">
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+      crossorigin="anonymous"></script>
+  </head>
 
 
 
-<body>
+  <body>
 
-<div class="container-fluid">
+    <div class="container-fluid">
+      <h1 class="text-center mt-5">
+        Are you sure you want to deposit the amount specified?
+      </h1>
+      <div id="div1">
+        <h2 class="text-center mt-3" id='result'></h2>
+      </div>
+      <div class="row mt-5">
+        <div class="col-sm-6 col-6">
+          <a class="btn btn-primary btn-md btn-success confirmationBtn
+            enterButton" onclick="depositMoney()">
+            YES
+          </a>
+        </div>
 
-  <h1 class="infoText" align="center">Are you sure you want to deposit the amount specified?</h1>
+        <div class="col-sm-6 col-6">
+          <a onclick="goBack()" class="btn btn-primary btn-md btn-danger
+            confirmationBtn
+            backButton">
+            NO
+          </a>
+        </div>
 
-  <div id="div1">
+      </div>
 
-    <h2 class="infoText" align="center" id='result'></h2>
+    </div>
 
-  </div>
-
-
-
-  <div class="row">
-
-    <div class="col-sm-6"><a style="float: right" class="btn btn-primary btn-lg btn-success confirmationBtn enterButton" onclick="depositMoney()">YES</a></div>
-
-    <div class="col-sm-6"><a onclick="goBack()" style="" class="btn btn-primary btn-lg btn-danger confirmationBtn backButton">NO</a></div>
-
-  </div>
-
-</div>
-
-</body>
+  </body>
 
 
 
-<script type="text/javascript">
+  <script type="text/javascript">
 
   var text = String(window.location);
 
@@ -116,8 +115,4 @@ function goBack() {
 }
 
 </script>
-
-
-
 </html>
-

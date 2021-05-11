@@ -4,13 +4,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/styling.css">
         <link rel="stylesheet" type="text/css" href="css/responsive.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="js/updateBalance.js"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+            crossorigin="anonymous">
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+            crossorigin="anonymous"></script>
     </head>
 
-<style>
+    <style>
 .PINtext {
 	font-size:40px;
 	width: 500px;
@@ -18,8 +26,8 @@
 }
 .calcBtn {
 	font-size: 30px;
-	width: 100px;
-    height: 100px;
+	width: 50px;
+    height: 50px;
     margin: 10px;
 
 }
@@ -41,40 +49,53 @@
     color:white;
 }
 </style>
+    <body>
+        <div class="container">
 
-<body>
-<div class="container">
+            <div class="row">
+                <h2 class="text-center">Please enter your Current PIN:
+                </h2>
+            </div>
 
-<div class="row">
-  <h2 style="text-align: center">Please enter your Current PIN: </h2>
-</div>
+            <p class="text-center"><input id="tbInput" class="PINtext"
+                    type="password" placeholder="Current PIN" maxlength="4" /></p>
+            <div id="keyboard" class="text-center">
+                <input class="calcBtn" id="btn1" type="button"
+                    onclick="input(this);" value="1" />
+                <input class="calcBtn" id="btn2" type="button"
+                    onclick="input(this);" value="2" />
+                <input class="calcBtn" id="btn3" type="button"
+                    onclick="input(this);" value="3" />
+                <br />
+                <input class="calcBtn" id="btn4" type="button"
+                    onclick="input(this);" value="4" />
+                <input class="calcBtn" id="btn5" type="button"
+                    onclick="input(this);" value="5" />
+                <input class="calcBtn" id="btn6" type="button"
+                    onclick="input(this);" value="6" />
+                <br />
+                <input class="calcBtn" id="btn7" type="button"
+                    onclick="input(this);" value="7" />
+                <input class="calcBtn" id="btn8" type="button"
+                    onclick="input(this);" value="8" />
+                <input class="calcBtn" id="btn9" type="button"
+                    onclick="input(this);" value="9" />
+                <br />
+                <input class="calcBtn" id="btnEnt" type="button" onclick="ent()"
+                    style="color:green" value="Y" />
+                <input class="calcBtn" id="btn0" type="button"
+                    onclick="input(this)" value="0" />
+                <input class="calcBtn" id="btnDel" type="button"
+                    style="color:red" value="X" onclick="del();" />
+            </div>
 
-<p align="center"><input  id="tbInput" class="PINtext" type="password" placeholder="Current PIN" maxlength="4"/></p>
+            <span id="PIN"></span>
 
-<div id="keyboard" align="center">
-    <input class="calcBtn" id="btn1" type="button" onclick="input(this);" value="1" />
-    <input class="calcBtn" id="btn2" type="button" onclick="input(this);" value="2" />
-    <input class="calcBtn" id="btn3" type="button" onclick="input(this);" value="3"/>
-    <br />
-    <input class="calcBtn" id="btn4" type="button" onclick="input(this);" value="4"/>
-    <input class="calcBtn" id="btn5" type="button" onclick="input(this);" value="5"/>
-    <input class="calcBtn" id="btn6" type="button" onclick="input(this);" value="6"/>
-    <br />
-    <input class="calcBtn" id="btn7" type="button" onclick="input(this);" value="7"/>
-    <input class="calcBtn" id="btn8" type="button" onclick="input(this);" value="8"/>
-    <input class="calcBtn" id="btn9" type="button" onclick="input(this);" value="9"/>
-    <br />
-    <input class="calcBtn" id="btnEnt" type="button" onclick="ent()" style="color:green" value="Enter"/>
-    <input class="calcBtn" id="btn0" type="button" onclick="input(this)" value="0"/>
-    <input class="calcBtn" id="btnDel" type="button" style="color:red" value="Delete" onclick="del();" />
-</div>
+            <a href="home.html" class="btn btn-danger btn-lg
+                returnCardButton">Back</a>
 
-<span id="PIN"></span>
-
-<a href="home.html" style="" class="btn btn-danger btn-lg returnCardButton">Back</a>
-
-</div>
-<script>
+        </div>
+        <script>
 function input(e) {
     var tbInput = document.getElementById("tbInput");
     if (tbInput.value.length<4){
@@ -106,8 +127,7 @@ function ent() {
  		}
  	}
 }
-    $("#PIN").append('<p align="center"> ***The PIN is '+getPIN()+ '***</p>')
+    $("#PIN").append('<p class="text-center"> ***The PIN is '+getPIN()+ '***</p>')
 </script>
-
-</body>
+    </body>
 </html>

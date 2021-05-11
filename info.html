@@ -4,12 +4,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/styling.css">
         <link rel="stylesheet" type="text/css" href="css/responsive.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="js/updateBalance.js"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+            crossorigin="anonymous">
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+            crossorigin="anonymous"></script>
     </head>
-<script>
+    <script>
 
 
     function tableCreate(trans) {
@@ -52,23 +60,24 @@
     }
 
 </script>
-<body>
-<div class="container-fluid">
-        <div class="row" id="title">
+    <body>
+        <div class="container-fluid">
+            <div class="row" id="title">
+            </div>
+            <div id="balance" class="text-center"></div>
+
+            <div id="table1">
+
+            </div>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4"><a onclick="goBack()" style="" class="btn
+                        btn-danger btn-lg returnCardButton">Back</a></div>
+            </div>
         </div>
-<div id="balance" align="center"></div>
 
-    <div id="table1">
-
-    </div>
-<div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4"></div>
-    <div class="col-md-4"><a onclick="goBack()" style="" class="btn btn-danger btn-lg returnCardButton">Back</a></div>
-</div>
-</div>
-
-<script>
+        <script>
     // LEAVE DOWN HERE
     function getQueryStrings() {
         var assoc  = {};
@@ -87,12 +96,12 @@
     var qs = getQueryStrings();
     var myParam = qs["account"];
     console.log(myParam);
-    $("#title").append('<h1 style="text-align: center">' + myParam + " 1234567887654321:" + '</h1>');
+    $("#title").append('<h1 class="text-center">' + myParam + " 1234567887654321:" + '</h1>');
     if (myParam == "CHQ") {
-        $('#balance').append('<h2 align="center">Current Balance: $' + getChequingBalance() +'</h2>')
+        $('#balance').append('<h2 class="text-center">Current Balance: $' + getChequingBalance() +'</h2>')
         var trans = getChequingTransactions();
     }else{
-        $('#balance').append('<h2 align="center">Current Balance: $' + getSavingsBalance() +'</h2>')
+        $('#balance').append('<h2 class="text-center">Current Balance: $' + getSavingsBalance() +'</h2>')
         var trans = getSavingsTransactions();
         }
     tableCreate(trans);
@@ -101,5 +110,5 @@
         location.href = 'acct.html?account='+ myParam ;
     }
 </script>
-</body>
+    </body>
 </html>
